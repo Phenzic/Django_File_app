@@ -1,3 +1,6 @@
+import sys
+print(sys.path)
+
 """
 URL configuration for RNS_ID project.
 
@@ -16,8 +19,11 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from file_manager import urls
+# from RNS_ID import file_manager
+from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", include(urls)),
 ]
